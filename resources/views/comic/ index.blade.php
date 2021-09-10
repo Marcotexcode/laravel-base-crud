@@ -29,7 +29,7 @@
             </thead>
         
             <tbody>
-
+                
                 @foreach($comics as $comic)
 
                     <tr>

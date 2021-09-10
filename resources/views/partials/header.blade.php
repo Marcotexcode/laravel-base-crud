@@ -1,7 +1,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
 
     <a class="navbar-brand" href="#">Comics</a>
 
@@ -17,13 +17,13 @@
 
             <li class="nav-item active">
 
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{{ route('homepage')}}">Home</a>
 
             </li>
 
             <li class="nav-item">
 
-                <a class="nav-link" href="#">Fumetti</a>
+                <a class="nav-link" href="{{ route('comics.index')}}">Fumetti</a>
 
             </li>
 
