@@ -10,21 +10,15 @@
 
     <h2 class="text-center">INSERIMENTO PRODOTTO</h2>
 
-    <form>
-    
+    <form action="{{ route('comics.store') }}" method="post">
+        
+        @csrf
+
         <div class="form-group">
     
             <label for="title">Titolo</label>
     
             <input type="text" name="title" class="form-control" id="title">
-        
-        </div>
-
-        <div class="form-group">
-    
-            <label for="description">Descrizione</label>
-    
-            <input type="text" name="description" class="form-control" id="description">
         
         </div>
 
@@ -54,7 +48,7 @@
 
         <div class="form-group">
     
-            <label for="sale_date">Data</label>
+            <label for="sale_date">Data es.(2021-09-10)</label>
     
             <input type="text" name="sale_date" class="form-control" id="sale_date">
         
@@ -66,6 +60,14 @@
     
             <input type="text" name="type" class="form-control" id="type">
         
+        </div>
+
+        <div class="form-group my-3">
+    
+            <label for="description">Descrizione</label>
+
+            <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
+            
         </div>
     
 
