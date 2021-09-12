@@ -29,7 +29,7 @@
 
             <li class="nav-item">
 
-                <a class="nav-link" href="#">Inserisci fumetto</a>
+                <a class="nav-link" href="{{ route('comics.create')}}">Inserisci fumetto</a>
 
             </li>
 

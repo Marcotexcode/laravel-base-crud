@@ -7,6 +7,30 @@
 @section('content')
 
     <div>
+
+        <p>
+
+            @if (session('modifica'))
+
+                <div class="alert alert-success">
+
+                    {{ session('modifica') }}
+
+                </div>
+                
+            @endif
+
+            @if (session('deleted'))
+            
+                <div class="alert alert-success">
+
+                    {{ session('deleted') }}
+
+                </div>
+                
+            @endif
+
+        </p>
      
         <table class="table">
         
@@ -43,8 +67,18 @@
                         <td>
                             
                             <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Show</a>
-                            <a href="" class="btn btn-success">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-success">Edit</a>
+
+                            <form action=" {{ route('comics.destroy', $comic->id ) }} " method="post" class="d-inline-block">
+                               
+                                @csrf
+                               
+                                @method('DELETE')
+
+                                <input type="submit" value="Delete" class="btn btn-danger">
+
+                            </form>
+
 
                         </td>
             
@@ -57,7 +91,9 @@
         </table>
 
         <div>
+
             {{ $comics->links() }}
+            
         </div>
 
     </div>
